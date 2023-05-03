@@ -1,10 +1,10 @@
 package main.arrays_and_hashing;
 
-import main.Solution;
+import main.Easy;
 
 import java.util.Arrays;
 
-public class ValidAnagram implements Solution {
+public class ValidAnagram implements Easy {
 
     public static void main(String[] args) {
         boolean result = new ValidAnagram().isAnagram("anagram", "nagaram");

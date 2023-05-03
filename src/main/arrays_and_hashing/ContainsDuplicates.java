@@ -1,11 +1,11 @@
 package main.arrays_and_hashing;
 
-import main.Solution;
+import main.Easy;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class ContainsDuplicates implements Solution {
+public class ContainsDuplicates implements Easy {
 
     public boolean containsDuplicate(int[] nums) {
 
