@@ -1,6 +1,6 @@
 package main.arrays_and_hashing;
 
-import main.Easy;
+import main.util.Easy;
 
 import java.util.HashSet;
 import java.util.Set;

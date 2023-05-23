@@ -1,14 +1,14 @@
 
 package main.arrays_and_hashing;
 
-import main.Medium;
+import main.util.Medium;
 
 import java.util.*;
 
 public class GroupAnagram implements Medium {
 
     public static void main(String[] args) {
-        String[] input = new String[]{"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"};
+        String[] input = new String[]{"eat","tea","tan","ate","nat","bat"};
         System.out.println(new GroupAnagram().groupAnagrams(input));
     }
 
