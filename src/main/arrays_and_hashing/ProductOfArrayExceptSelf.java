@@ -32,7 +32,6 @@ public class ProductOfArrayExceptSelf implements Medium {
     }
 
     @Override
-    // Time Limit Exceeded on 19/22 test case
     public String mySolution() {
         return """
                 public int[] productExceptSelf(int[] nums) {
