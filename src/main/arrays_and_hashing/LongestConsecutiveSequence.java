@@ -33,6 +33,11 @@ public class LongestConsecutiveSequence implements Medium {
     }
 
     @Override
+    public String getLink() {
+        return "https://leetcode.com/problems/longest-consecutive-sequence/";
+    }
+
+    @Override
     public String mySolution() {
         return """
                     public int longestConsecutive(int[] nums) {

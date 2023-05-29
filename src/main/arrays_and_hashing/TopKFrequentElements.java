@@ -54,6 +54,11 @@ public class TopKFrequentElements implements Medium {
     }
 
     @Override
+    public String getLink() {
+        return "https://leetcode.com/problems/top-k-frequent-elements/";
+    }
+
+    @Override
     public String mySolution() {
         return """
                     public int[] topKFrequent(int[] nums, int k) {

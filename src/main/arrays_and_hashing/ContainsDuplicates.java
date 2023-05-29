@@ -20,6 +20,11 @@ public class ContainsDuplicates implements Easy {
     }
 
     @Override
+    public String getLink() {
+        return "https://leetcode.com/problems/contains-duplicate/";
+    }
+
+    @Override
     public String mySolution() {
         return """
                 public boolean containsDuplicate(int[] nums) {

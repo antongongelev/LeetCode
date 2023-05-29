@@ -35,6 +35,11 @@ public class GroupAnagram implements Medium {
     }
 
     @Override
+    public String getLink() {
+        return "https://leetcode.com/problems/group-anagrams/";
+    }
+
+    @Override
     public String mySolution() {
         return """
                               public List<List<String>> groupAnagrams(String[] strs) {

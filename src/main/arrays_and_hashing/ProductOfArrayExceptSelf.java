@@ -32,6 +32,11 @@ public class ProductOfArrayExceptSelf implements Medium {
     }
 
     @Override
+    public String getLink() {
+        return "https://leetcode.com/problems/product-of-array-except-self/";
+    }
+
+    @Override
     public String mySolution() {
         return """
                 public int[] productExceptSelf(int[] nums) {

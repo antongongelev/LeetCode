@@ -66,6 +66,11 @@ public class ValidSudoku implements Medium {
 
 
     @Override
+    public String getLink() {
+        return "https://leetcode.com/problems/valid-sudoku/";
+    }
+
+    @Override
     public String mySolution() {
         return """
                     public boolean isValidSudoku(char[][] board) {

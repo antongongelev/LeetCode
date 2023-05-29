@@ -26,6 +26,11 @@ public class ValidAnagram implements Easy {
     }
 
     @Override
+    public String getLink() {
+        return "https://leetcode.com/problems/valid-anagram/";
+    }
+
+    @Override
     public String mySolution() {
         return """
                 public boolean isAnagram(String s, String t) {

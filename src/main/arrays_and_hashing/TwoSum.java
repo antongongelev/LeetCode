@@ -30,6 +30,11 @@ public class TwoSum implements Easy {
     }
 
     @Override
+    public String getLink() {
+        return "https://leetcode.com/problems/two-sum/";
+    }
+
+    @Override
     public String mySolution() {
         return """
                         for (int i = 0; i < nums.length - 1; i++) {
