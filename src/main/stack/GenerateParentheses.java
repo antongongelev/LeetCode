@@ -1,12 +1,12 @@
 package main.stack;
 
 import main.util.Medium;
-import main.util.Unbearable;
+import main.util.MindBlowing;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenerateParentheses implements Medium, Unbearable {
+public class GenerateParentheses implements Medium, MindBlowing {
 
     public static void main(String[] args) {
         System.out.println(new GenerateParentheses().generateParenthesis(3));
@@ -14,28 +14,22 @@ public class GenerateParentheses implements Medium, Unbearable {
 
     public List<String> generateParenthesis(int n) {
         List<String> result = new ArrayList<>();
-        StringBuilder builder = new StringBuilder();
-
-        appendRecursively(n, 0, 0, result, builder);
+        appendRecursively(n, 0, 0, result, "");
         return result;
     }
 
-    private static void appendRecursively(int total, int opened, int closed, List<String> result, StringBuilder builder) {
+    private static void appendRecursively(int total, int opened, int closed, List<String> result, String string) {
         if (total == opened && total == closed) {
-            result.add(builder.toString());
+            result.add(string);
             return;
         }
 
         if (opened < total) {
-            builder.append("(");
-            appendRecursively(total, opened + 1, closed, result, builder);
-            builder.setLength(builder.length() - 1);
+            appendRecursively(total, opened + 1, closed, result, string + "(");
         }
 
         if (closed < opened) {
-            builder.append(")");
-            appendRecursively(total, opened, closed + 1, result, builder);
-            builder.setLength(builder.length() - 1);
+            appendRecursively(total, opened, closed + 1, result, string + ")");
         }
     }
 
