@@ -3,7 +3,7 @@ package main.util.external_task;
 public class FirstUnique {
 
     public static void main(String[] args) {
-        int result = FirstUnique.firstUnique("abcab");
+        int result = FirstUnique.firstUnique("aabb");
         System.out.println(result);
     }
 
@@ -17,8 +17,9 @@ public class FirstUnique {
         }
 
         for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == 1) {
-                return str.indexOf(str.charAt(i));
+            char c = str.charAt(i);
+            if (chars[c - 'a'] == 1) {
+                return i;
             }
         }
 
