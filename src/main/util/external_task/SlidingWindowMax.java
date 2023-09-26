@@ -14,31 +14,26 @@ public class SlidingWindowMax implements Hard {
     }
 
     public int[] maxSlidingWindow(int[] nums, int k) {
+        int[] result = new int[nums.length - k + 1];
+        Deque<Integer> stack = new ArrayDeque<>();
 
-        int[] res = new int[nums.length - k + 1];
-        int left = 0;
-        int right = 0;
-        int index = 0;
-        Deque<Integer> q = new ArrayDeque<>();
-
-        while (right < nums.length) {
-            while (!q.isEmpty() && nums[right] > nums[q.peekLast()]) {
-                q.pollLast();
+        for (int i = 0; i < nums.length; i++) {
+            if (!stack.isEmpty() && i - k + 1 > stack.peekFirst()) {
+                // левое число больше не помещается в окно
+                stack.removeFirst();
             }
-            q.offerLast(right);
-
-            if (left > q.peekFirst()) {
-                q.pollFirst();
+            while (!stack.isEmpty() && nums[stack.peekLast()] < nums[i]) {
+                // новое число больше текущего. Удалим текущее
+                stack.removeLast();
             }
-
-            if (right + 1 >= k) {
-                res[index++] = (nums[q.peekFirst()]);
-                left++;
+            stack.addLast(i);
+            if (i + 1 >= k) {
+                // На данной итерации мы должны записать максимум
+                result[i + 1 - k] = nums[stack.peekFirst()];
             }
-            right++;
         }
 
-        return res;
+        return result;
     }
 
     @Override
@@ -49,22 +44,24 @@ public class SlidingWindowMax implements Hard {
     @Override
     public String mySolution() {
         return """
-                        int[] result = new int[nums.length - k + 1];
-                        int left = 0;
-                        int right = k;
-                                
-                        while (right <= nums.length) {
-                            int max = Integer.MIN_VALUE;
-                            for (int i = 0; i < k; i++) {
-                                max = Math.max(max, nums[left + i]);
-                            }
-                            result[left] = max;
-                            left++;
-                            right++;
-                        }
-                                
-                        return result;
-                """;
+                int[] result = new int[nums.length - k + 1];
+                Deque<Integer> stack = new ArrayDeque<>();
+                               
+                for (int i = 0; i < nums.length; i++) {
+                    if (!stack.isEmpty() && i - k + 1 > stack.peekFirst()) {
+                        stack.removeFirst();
+                    }
+                    while (!stack.isEmpty() && nums[stack.peekLast()] < nums[i]) {
+                        stack.removeLast();
+                    }
+                    stack.addLast(i);
+                    if (i + 1 >= k) {
+                        result[i + 1 - k] = nums[stack.peekFirst()];
+                    }
+                }
+                               
+                return result;
+                 """;
     }
 
     @Override
